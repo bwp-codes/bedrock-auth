@@ -1,30 +1,27 @@
 <?php
 /**
- * @package WP Bedrock Auth
- * @version 1.0.2
+ * @package Bedrock HTTP Auth
+ * @version 1.0.4
  */
 /*
-Plugin Name: WP Bedrock Auth
-Plugin URI: https://github.com/aprivette/bedrock-auth
-Description: Environment-specific basic auth for the Bedrock WordPress framework.
-Author: Adam Privette
-Version: 1.0.2
-Author URI: http://www.dcwebmarketing.com/
+ * Plugin Name: Bedrock HTTP Auth
+ * Plugin URI: https://github.com/bwp-codes/bedrock-auth
+ * Description: Environment-specific http basic auth for the Bedrock WordPress framework.
+ * Version: 1.0.4
+ * Author: BWP Codes
+ * Author URI: http://www.bwp-codes.de/
+ * License: GPL v2 or later
+ * Credit: Based on original work from Adam Privette (github.com/aprivette/bedrock-auth)
 */
 
-namespace BedrockAuth;
+use function Env\env;
 
-use Dotenv;
-use Env;
-
-class BasicAuth
+class BedrockHTTPAuth
 {
     public function __construct()
     {
         $this->root_dir = dirname(dirname(ABSPATH));
-        $this->dotenv = new Dotenv\Dotenv($this->root_dir);
-
-        Env::init();
+        $this->dotenv = Dotenv\Dotenv::createUnsafeImmutable($this->root_dir);
     }
 
     public function initAuth()
@@ -67,5 +64,5 @@ class BasicAuth
     }
 }
 
-$bedrock = new BasicAuth();
-$bedrock->initAuth();
+$bedrock_http_auth = new BedrockHTTPAuth();
+$bedrock_http_auth->initAuth();
