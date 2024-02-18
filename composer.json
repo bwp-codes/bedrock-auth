@@ -1,5 +1,5 @@
 {
-    "name": "aprivette/bedrock-auth",
+    "name": "bwp-codes/bedrock-auth",
     "description": "Environment-specific basic auth for the Bedrock WordPress framework.",
     "type": "wordpress-plugin",
     "homepage": "https://github.com/aprivette/bedrock-auth",
@@ -18,7 +18,7 @@
         "psr-4": {"BedrockAuth\\": "src/"}
     },
     "require": {
-        "vlucas/phpdotenv": "^2.5",
-        "oscarotero/env": "^1.1"
+        "vlucas/phpdotenv": "^5.5",
+        "oscarotero/env": "^2.1"
     }
 }
